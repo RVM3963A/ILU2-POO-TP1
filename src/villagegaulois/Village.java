@@ -4,13 +4,6 @@ import personnages.Chef;
 import personnages.Gaulois;
 
 
-public class VillageSansChefException extends Exception {
-	public VillageSansChefException(String message) {
-		super(message);
-	}
-}
-
-
 public class Village {
 	private Marche marche;
 	private String nom;
@@ -72,16 +65,6 @@ public class Village {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public String afficherMarche() {
 		return marche.afficherMarcheM();
 	}
@@ -89,13 +72,12 @@ public class Village {
 	public String installerVendeur(Gaulois vendeur, String produit, int nbProduit) {
 		StringBuilder txt = new StringBuilder();
 		int indiceEtal = marche.trouverEtalLibre();
-		System.out.println(indiceEtal);
 		if (indiceEtal == -1) {
 			txt.append( "Tout les �tals sont occup�s, le vendeur " + vendeur.getNom() + " devra revenir demain.\n");
 			return txt.toString();
 		}
 		marche.utiliserEtal(indiceEtal, vendeur, produit, nbProduit);
-		txt.append("Le vendeur " + vendeur.getNom() + "vend des " + produit + " � l'�tal n�" + indiceEtal + ".\n");
+		txt.append("Le vendeur " + vendeur.getNom() + " vend des " + produit + " � l'�tal n�" + indiceEtal + ".\n");
 		return txt.toString();
 	}
 	
@@ -108,7 +90,7 @@ public class Village {
 		}
 		txt.append("Les vendeurs qui proposent des " + produit + " sont :\n");
 		for (int i=0; i<trouveretale.length; i++ ) {
-			txt.append(" - " + trouveretale[i].getVendeur() + "\n");
+			txt.append(" - " + trouveretale[i].getVendeur().getNom() + "\n");
 		}
 		return txt.toString();
 		
@@ -152,7 +134,6 @@ public class Village {
 		}
 		
 		private int trouverEtalLibre() {
-			System.out.println(etals.length + " "+ etals[0]);
 			for(int i = 0; i<etals.length; i++) {
 				if ((etals[i] == null || !(etals[i].isEtalOccupe()))){
 					return i;

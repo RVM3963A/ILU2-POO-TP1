@@ -16,6 +16,7 @@ public class Etal {
 	public Gaulois getVendeur() {
 		return vendeur;
 	}
+	
 
 	public void occuperEtal(Gaulois vendeur, String produit, int quantite) {
 		this.vendeur = vendeur;
@@ -32,7 +33,7 @@ public class Etal {
 		int produitVendu = quantiteDebutMarche - quantite;
 		if (produitVendu > 0) {
 			chaine.append(
-					"il a vendu " + produitVendu + " parmi " + produit + ".\n");
+					"il a vendu " + produitVendu + " parmi " + quantiteDebutMarche + " " +  produit + ".\n");
 		} else {
 			chaine.append("il n'a malheureusement rien vendu.\n");
 		}
@@ -99,7 +100,7 @@ public class Etal {
 	
 	
 	public boolean contientProduit(String produit) {
-		return this.produit.equals(produit);
+		return this.produit == produit;
 	}
 
 }
