@@ -102,11 +102,11 @@ public class Village {
 	
 	public String partirVendeur(Gaulois vendeur) {
 		Etal etale = rechercherEtal(vendeur);
-		return marche.LibererEtaleMarcher(etale);
+		return marche.libererEtaleMarcher(etale);
 	}
 	
 	
-	public String Acheter(Etal etal, int quantite, Gaulois acheteur) {
+	public String acheter(Etal etal, int quantite, Gaulois acheteur) {
 		StringBuilder chaine = new StringBuilder();
 		
 		chaine.append(etal.acheterProduit(quantite, acheteur));
@@ -189,7 +189,7 @@ public class Village {
 		}
 		
 		
-		private String LibererEtaleMarcher(Etal etale) {
+		private String libererEtaleMarcher(Etal etale) {
 			return etale.libererEtal();
 		}
 		

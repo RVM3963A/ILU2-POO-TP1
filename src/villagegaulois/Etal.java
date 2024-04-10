@@ -85,7 +85,8 @@ public class Etal {
 			}
 			throw new IllegalStateException(" l'étal doit être occupé");
 			}
-			throw new IllegalArgumentException("la quantité doit être positive");
+			throw new IllegalArgumentException("la quantité doit être positive"); 
+			//g�rer exeption pas lancer
 		}
 		throw new NullPointerException("l'acheteur ne doit pas être null");
 		}
